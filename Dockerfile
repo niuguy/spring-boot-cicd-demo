@@ -8,7 +8,7 @@ FROM openjdk:11-jre-slim-buster
 #COPY ${DEPENDENCY}/BOOT-INF/classes /app
 #ENTRYPOINT ["java","-cp","app:app/lib/*","com.example.demo.DemoApplication"]
 
-RUN addgroup -S spring && adduser -S spring -G spring
+RUN adduser --system --group spring
 USER spring:spring
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} app.jar
