@@ -34,11 +34,11 @@ on:
 env:
   AWS_REGION: us-east-1                  # set this to your preferred AWS region, e.g. us-west-1
   ECR_REPOSITORY: whale           # set this to your Amazon ECR repository name
-  ECS_SERVICE: sample-app-service                 # set this to your Amazon ECS service name
+  ECS_SERVICE: spring-boot-demo                 # set this to your Amazon ECS service name
   ECS_CLUSTER: spring                 # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: ./aws-ecs-task.json # set this to the path to your Amazon ECS task definition
   # file, e.g. .aws/task-definition.json
-  CONTAINER_NAME: sample-app          # set this to the name of the container in the
+  CONTAINER_NAME: springbootdemo          # set this to the name of the container in the
   # containerDefinitions section of your task definition
 
 permissions:
@@ -46,7 +46,7 @@ permissions:
 
 jobs:
   deploy:
-    name: Deploy
+    name: CI-AWS
     runs-on: ubuntu-latest
     environment: production
 
