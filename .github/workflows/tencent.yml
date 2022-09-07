@@ -23,7 +23,7 @@ on:
 # Environment variables available to all jobs and steps in this workflow
 env:
   TKE_IMAGE_URL: deccr.ccs.tencentyun.com/myfana2022/backend
-  TKE_REGION: eu-frankfurt
+  TKE_REGION: eu-frankfurt-1
   TKE_CLUSTER_ID: cls-nmjcimxi
   DEPLOYMENT_NAME: tks-spring-demo
 
