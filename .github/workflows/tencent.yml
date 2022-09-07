@@ -24,7 +24,7 @@ on:
 env:
   TKE_IMAGE_URL: deccr.ccs.tencentyun.com/myfana2022/backend
   TKE_REGION: eu-frankfurt
-  TKE_CLUSTER_ID: cls-nmjcimxi
+  TKE_CLUSTER_ID: cls-oh2fi8hk
   DEPLOYMENT_NAME: tks-spring-demo
 
 permissions:
