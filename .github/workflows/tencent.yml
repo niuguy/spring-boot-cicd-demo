@@ -18,14 +18,14 @@ name: Tencent Kubernetes Engine
 on:
   push:
     branches:
-      - "main"
+      - "tencent-cloud-1"
 
 # Environment variables available to all jobs and steps in this workflow
 env:
-  TKE_IMAGE_URL: ccr.ccs.tencentyun.com/demo/mywebapp
-  TKE_REGION: ap-guangzhou
-  TKE_CLUSTER_ID: cls-mywebapp
-  DEPLOYMENT_NAME: tke-test
+  TKE_IMAGE_URL: deccr.ccs.tencentyun.com/myfana2022/backend
+  TKE_REGION: eu-frankfurt
+  TKE_CLUSTER_ID: cls-nmjcimxi
+  DEPLOYMENT_NAME: tks-spring-demo
 
 permissions:
   contents: read
