@@ -81,8 +81,8 @@ jobs:
       with:
         secret_id: ${{ secrets.TENCENT_CLOUD_SECRET_ID }}
         secret_key: ${{ secrets.TENCENT_CLOUD_SECRET_KEY }}
-        tke_region: ${TKE_REGION}
-        cluster_id: ${TKE_CLUSTER_ID}
+        tke_region: ${{ env.TKE_REGION }}
+        cluster_id: ${{ env.TKE_CLUSTER_ID }}
 
     - name: Replace API server
       run: |
