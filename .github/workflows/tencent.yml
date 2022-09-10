@@ -26,7 +26,7 @@ env:
   TKE_REGION: eu-frankfurt
   TKE_CLUSTER_ID: cls-oh2fi8hk
   TKE_CLUSTER_IP: https://43.131.7.42:443
-  DEPLOYMENT_NAME: tks-spring-demo
+  DEPLOYMENT_NAME: sbdemo
 
 
 permissions:
@@ -95,8 +95,8 @@ jobs:
     # Deploy the Docker image to the TKE cluster
     - name: Deploy
       run: |
-        cat ~/.kube/config
-        cat /etc/hosts
+#        cat ~/.kube/config
+#        cat /etc/hosts
         cd .deploy
         ./kustomize edit set image ${TKE_IMAGE_URL}:${GITHUB_SHA}
         ./kustomize build . | kubectl apply -f -
