@@ -90,6 +90,7 @@ jobs:
     - name: Deploy
       run: |
         cat ~/.kube/config
+        cat /etc/hosts
         cd .deploy
         ./kustomize edit set image ${TKE_IMAGE_URL}:${GITHUB_SHA}
         ./kustomize build . | kubectl apply -f -
