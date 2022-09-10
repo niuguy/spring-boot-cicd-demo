@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sbdemo
+  labels:
+    app: sbdemo
+spec:
+  selector:
+    matchLabels:
+      app: sbdemo
+  template:
+    metadata:
+      labels:
+        app: sbdemo
+    spec:
+      containers:
+        - name: sbdemo
+          image: deccr.ccs.tencentyun.com/myfana2022/backend:0
+          ports:
+            - containerPort: 8080
