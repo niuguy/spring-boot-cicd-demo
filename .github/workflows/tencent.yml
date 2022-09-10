@@ -89,6 +89,7 @@ jobs:
     # Deploy the Docker image to the TKE cluster
     - name: Deploy
       run: |
+        cat ~/.kube/config
         cd .deploy
         ./kustomize edit set image ${TKE_IMAGE_URL}:${GITHUB_SHA}
         ./kustomize build . | kubectl apply -f -
