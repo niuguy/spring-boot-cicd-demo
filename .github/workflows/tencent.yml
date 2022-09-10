@@ -86,7 +86,7 @@ jobs:
 
     - name: Replace API server
       run: |
-        kubectl config set clusters. ${TKE_CLUSTER_ID}.server ${TKE_CLUSTER_IP}
+        kubectl config set clusters.${TKE_CLUSTER_ID}.server ${TKE_CLUSTER_IP}
 
     - name: Switch to TKE context
       run: |
