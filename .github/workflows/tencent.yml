@@ -25,7 +25,9 @@ env:
   TKE_IMAGE_URL: deccr.ccs.tencentyun.com/myfana2022/backend
   TKE_REGION: eu-frankfurt
   TKE_CLUSTER_ID: cls-oh2fi8hk
+  TKE_CLUSTER_IP: https://43.131.7.42:443
   DEPLOYMENT_NAME: tks-spring-demo
+
 
 permissions:
   contents: read
@@ -79,9 +81,13 @@ jobs:
       with:
         secret_id: ${{ secrets.TENCENT_CLOUD_SECRET_ID }}
         secret_key: ${{ secrets.TENCENT_CLOUD_SECRET_KEY }}
-        tke_region: ${{ env.TKE_REGION }}
-        cluster_id: ${{ env.TKE_CLUSTER_ID }}
-    
+        tke_region: ${{ TKE_REGION }}
+        cluster_id: ${{ TKE_CLUSTER_ID }}
+
+    - name: Replace API server
+      run: |
+        kubectl config set clusters.${{ TKE_CLUSTER_ID }}.server ${{ TKE_CLUSTER_IP }}
+
     - name: Switch to TKE context
       run: |
         kubectl config use-context ${TKE_CLUSTER_ID}-context-default
