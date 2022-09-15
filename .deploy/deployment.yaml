@@ -18,3 +18,10 @@ spec:
           image: deccr.ccs.tencentyun.com/myfana2022/backend:0
           ports:
             - containerPort: 8080
+          env:
+            - name: GREETING_PREFIX
+              valueFrom:
+                configMapKeyRef:
+                  name: spring-boot-configmaps-demo
+                  key: greeter.prefix
+
